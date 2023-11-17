@@ -26,7 +26,7 @@ The Proteus simulation file (provided in the 'Proteus_Simulation' directory) all
 
 ## Atmel Studio Firmware
 
-The 'Firmware' directory contains the Atmel Studio project for the Atmega32 microcontroller. The C code configures the microcontroller and implements the logic for LED matrix multiplexing. Repository contains code for all the intermediate steps in between for easy understanding and implementation.
+The 'Firmware' directory contains the Atmel Studio project for the Atmega32 microcontroller. The C code configures the microcontroller and implements the logic for LED matrix multiplexing. The repository contains code for all the intermediate steps in between for easy understanding and implementation.
 
 ## How to Use
 
