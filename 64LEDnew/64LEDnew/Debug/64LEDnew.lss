@@ -1,0 +1,222 @@
+
+64LEDnew.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000006c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000160  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  00000160  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  0000018f  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  0000019d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000859  00000000  00000000  000001bd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000058b  00000000  00000000  00000a16  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000253  00000000  00000000  00000fa1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  000011f4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000196  00000000  00000000  00001218  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000b7  00000000  00000000  000013ae  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000028  00000000  00000000  00001465  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  000000de  000000de  00000152  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001490  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.main    0000005c  0000006c  0000006c  000000e0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.__dummy_fini 00000002  000000e6  000000e6  0000015a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.__dummy_funcs_on_exit 00000002  000000e8  000000e8  0000015c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.__dummy_simulator_exit 00000002  000000ea  000000ea  0000015e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.exit    00000016  000000c8  000000c8  0000013c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text._Exit   00000004  000000e2  000000e2  00000156  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+   8:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+   c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  10:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  14:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  18:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  1c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  20:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  24:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  28:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  2c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  30:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  34:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  38:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  3c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  40:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  44:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  48:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  4c:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+  50:	0c 94 6f 00 	jmp	0xde	; 0xde <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <_etext>
+  64:	0c 94 64 00 	jmp	0xc8	; 0xc8 <exit>
+
+00000068 <_exit>:
+  68:	f8 94       	cli
+
+0000006a <__stop_program>:
+  6a:	ff cf       	rjmp	.-2      	; 0x6a <__stop_program>
+
+Disassembly of section .text:
+
+000000de <__bad_interrupt>:
+  de:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.main:
+
+0000006c <main>:
+
+#include <avr/io.h>
+#include<util/delay.h>
+
+int main(void)
+{   DDRD=0xff;
+  6c:	8f ef       	ldi	r24, 0xFF	; 255
+  6e:	81 bb       	out	0x11, r24	; 17
+	DDRB=0xff;
+  70:	87 bb       	out	0x17, r24	; 23
+	
+	
+	char col[2]={0b00000001,0b10000000};
+  72:	71 e0       	ldi	r23, 0x01	; 1
+  74:	60 e8       	ldi	r22, 0x80	; 128
+    while(1)
+    {
+	 for (int j=0;j<=7;j++)
+  76:	40 e0       	ldi	r20, 0x00	; 0
+  78:	50 e0       	ldi	r21, 0x00	; 0
+  7a:	22 c0       	rjmp	.+68     	; 0xc0 <main+0x54>
+	 {    
+		PORTD=2^j;
+  7c:	82 e0       	ldi	r24, 0x02	; 2
+  7e:	84 27       	eor	r24, r20
+  80:	82 bb       	out	0x12, r24	; 18
+		if((j+1)%2==0)
+  82:	4f 5f       	subi	r20, 0xFF	; 255
+  84:	5f 4f       	sbci	r21, 0xFF	; 255
+  86:	40 fd       	sbrc	r20, 0
+  88:	04 c0       	rjmp	.+8      	; 0x92 <main+0x26>
+		PORTB=col[0];
+  8a:	78 bb       	out	0x18, r23	; 24
+
+#include <avr/io.h>
+#include<util/delay.h>
+
+int main(void)
+{   DDRD=0xff;
+  8c:	20 e0       	ldi	r18, 0x00	; 0
+  8e:	30 e0       	ldi	r19, 0x00	; 0
+  90:	14 c0       	rjmp	.+40     	; 0xba <main+0x4e>
+	 {    
+		PORTD=2^j;
+		if((j+1)%2==0)
+		PORTB=col[0];
+		else
+		PORTB=col[1];
+  92:	68 bb       	out	0x18, r22	; 24
+  94:	fb cf       	rjmp	.-10     	; 0x8c <main+0x20>
+         for(int i=0;i<=7;i++)
+	     {
+           PORTB=~(PORTB<<i);
+  96:	88 b3       	in	r24, 0x18	; 24
+  98:	90 e0       	ldi	r25, 0x00	; 0
+  9a:	02 2e       	mov	r0, r18
+  9c:	02 c0       	rjmp	.+4      	; 0xa2 <main+0x36>
+  9e:	88 0f       	add	r24, r24
+  a0:	99 1f       	adc	r25, r25
+  a2:	0a 94       	dec	r0
+  a4:	e2 f7       	brpl	.-8      	; 0x9e <main+0x32>
+  a6:	80 95       	com	r24
+  a8:	88 bb       	out	0x18, r24	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  aa:	83 ed       	ldi	r24, 0xD3	; 211
+  ac:	90 e3       	ldi	r25, 0x30	; 48
+  ae:	01 97       	sbiw	r24, 0x01	; 1
+  b0:	f1 f7       	brne	.-4      	; 0xae <main+0x42>
+  b2:	00 c0       	rjmp	.+0      	; 0xb4 <main+0x48>
+  b4:	00 00       	nop
+		PORTD=2^j;
+		if((j+1)%2==0)
+		PORTB=col[0];
+		else
+		PORTB=col[1];
+         for(int i=0;i<=7;i++)
+  b6:	2f 5f       	subi	r18, 0xFF	; 255
+  b8:	3f 4f       	sbci	r19, 0xFF	; 255
+  ba:	28 30       	cpi	r18, 0x08	; 8
+  bc:	31 05       	cpc	r19, r1
+  be:	5c f3       	brlt	.-42     	; 0x96 <main+0x2a>
+	
+	
+	char col[2]={0b00000001,0b10000000};
+    while(1)
+    {
+	 for (int j=0;j<=7;j++)
+  c0:	48 30       	cpi	r20, 0x08	; 8
+  c2:	51 05       	cpc	r21, r1
+  c4:	dc f2       	brlt	.-74     	; 0x7c <main+0x10>
+  c6:	d7 cf       	rjmp	.-82     	; 0x76 <main+0xa>
+
+Disassembly of section .text.__dummy_fini:
+
+000000e6 <_fini>:
+  e6:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+000000e8 <__funcs_on_exit>:
+  e8:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+000000ea <__simulator_exit>:
+  ea:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+000000c8 <exit>:
+  c8:	ec 01       	movw	r28, r24
+  ca:	0e 94 74 00 	call	0xe8	; 0xe8 <__funcs_on_exit>
+  ce:	0e 94 73 00 	call	0xe6	; 0xe6 <_fini>
+  d2:	ce 01       	movw	r24, r28
+  d4:	0e 94 75 00 	call	0xea	; 0xea <__simulator_exit>
+  d8:	ce 01       	movw	r24, r28
+  da:	0e 94 71 00 	call	0xe2	; 0xe2 <_Exit>
+
+Disassembly of section .text._Exit:
+
+000000e2 <_Exit>:
+  e2:	0e 94 34 00 	call	0x68	; 0x68 <_exit>

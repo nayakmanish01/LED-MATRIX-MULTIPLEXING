@@ -1,0 +1,414 @@
+
+2shift_register_onefn.c.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000b0  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00000286  0000031a  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  0000031a  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  00000349  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000028  00000000  00000000  00000357  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000950  00000000  00000000  0000037f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005f4  00000000  00000000  00000ccf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000002b9  00000000  00000000  000012c3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000048  00000000  00000000  0000157c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000196  00000000  00000000  000015c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000013d  00000000  00000000  0000175a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  00001897  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  000001f0  000001f0  00000284  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000018b0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.HC595Write 00000096  000000b0  000000b0  00000144  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .rodata       00000088  00800060  000001fe  00000292  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 16 .text.main    00000094  00000146  00000146  000001da  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.__dummy_fini 00000002  000001f8  000001f8  0000028c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.__dummy_funcs_on_exit 00000002  000001fa  000001fa  0000028e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.__dummy_simulator_exit 00000002  000001fc  000001fc  00000290  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.exit    00000016  000001da  000001da  0000026e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text._Exit   00000004  000001f4  000001f4  00000288  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2e 00 	jmp	0x5c	; 0x5c <__ctors_end>
+   4:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+   8:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+   c:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  10:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  14:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  18:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  1c:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  20:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  24:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  28:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  2c:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  30:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  34:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  38:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  3c:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  40:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  44:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  48:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  4c:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+  50:	0c 94 f8 00 	jmp	0x1f0	; 0x1f0 <__bad_interrupt>
+
+00000054 <.dinit>:
+  54:	00 60       	ori	r16, 0x00	; 0
+  56:	00 e8       	ldi	r16, 0x80	; 128
+  58:	00 01       	movw	r0, r0
+  5a:	fe 00       	.word	0x00fe	; ????
+
+0000005c <__ctors_end>:
+  5c:	11 24       	eor	r1, r1
+  5e:	1f be       	out	0x3f, r1	; 63
+  60:	cf e5       	ldi	r28, 0x5F	; 95
+  62:	d8 e0       	ldi	r29, 0x08	; 8
+  64:	de bf       	out	0x3e, r29	; 62
+  66:	cd bf       	out	0x3d, r28	; 61
+
+00000068 <__do_copy_data>:
+  68:	e4 e5       	ldi	r30, 0x54	; 84
+  6a:	f0 e0       	ldi	r31, 0x00	; 0
+  6c:	40 e0       	ldi	r20, 0x00	; 0
+  6e:	17 c0       	rjmp	.+46     	; 0x9e <__do_clear_bss+0x8>
+  70:	b5 91       	lpm	r27, Z+
+  72:	a5 91       	lpm	r26, Z+
+  74:	35 91       	lpm	r19, Z+
+  76:	25 91       	lpm	r18, Z+
+  78:	05 91       	lpm	r16, Z+
+  7a:	07 fd       	sbrc	r16, 7
+  7c:	0c c0       	rjmp	.+24     	; 0x96 <__do_clear_bss>
+  7e:	95 91       	lpm	r25, Z+
+  80:	85 91       	lpm	r24, Z+
+  82:	ef 01       	movw	r28, r30
+  84:	f9 2f       	mov	r31, r25
+  86:	e8 2f       	mov	r30, r24
+  88:	05 90       	lpm	r0, Z+
+  8a:	0d 92       	st	X+, r0
+  8c:	a2 17       	cp	r26, r18
+  8e:	b3 07       	cpc	r27, r19
+  90:	d9 f7       	brne	.-10     	; 0x88 <__do_copy_data+0x20>
+  92:	fe 01       	movw	r30, r28
+  94:	04 c0       	rjmp	.+8      	; 0x9e <__do_clear_bss+0x8>
+
+00000096 <__do_clear_bss>:
+  96:	1d 92       	st	X+, r1
+  98:	a2 17       	cp	r26, r18
+  9a:	b3 07       	cpc	r27, r19
+  9c:	e1 f7       	brne	.-8      	; 0x96 <__do_clear_bss>
+  9e:	eb 35       	cpi	r30, 0x5B	; 91
+  a0:	f4 07       	cpc	r31, r20
+  a2:	31 f7       	brne	.-52     	; 0x70 <__do_copy_data+0x8>
+  a4:	0e 94 a3 00 	call	0x146	; 0x146 <main>
+  a8:	0c 94 ed 00 	jmp	0x1da	; 0x1da <exit>
+
+000000ac <_exit>:
+  ac:	f8 94       	cli
+
+000000ae <__stop_program>:
+  ae:	ff cf       	rjmp	.-2      	; 0xae <__stop_program>
+
+Disassembly of section .text:
+
+000001f0 <__bad_interrupt>:
+ 1f0:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.HC595Write:
+
+000000b0 <HC595Write>:
+#include <util/delay.h>
+#define HC595_PORT   PORTC
+#define HC595_DDR    DDRC
+
+void HC595Write(int data,int b)
+{ int lch,clock,datapin;
+  b0:	fc 01       	movw	r30, r24
+	//Send each 8 bits serially
+
+	//Order is MSB first
+	if (b==1)
+  b2:	61 30       	cpi	r22, 0x01	; 1
+  b4:	71 05       	cpc	r23, r1
+  b6:	21 f4       	brne	.+8      	; 0xc0 <HC595Write+0x10>
+	{  datapin=0;
+  b8:	60 e0       	ldi	r22, 0x00	; 0
+		clock=1;
+  ba:	51 e0       	ldi	r21, 0x01	; 1
+		lch=2;
+  bc:	72 e0       	ldi	r23, 0x02	; 2
+  be:	03 c0       	rjmp	.+6      	; 0xc6 <HC595Write+0x16>
+	}
+	else
+	{  datapin=3;
+  c0:	63 e0       	ldi	r22, 0x03	; 3
+		clock=4;
+  c2:	54 e0       	ldi	r21, 0x04	; 4
+		lch=5;
+  c4:	75 e0       	ldi	r23, 0x05	; 5
+	}
+	for(uint8_t i=0;i<8;i++)
+  c6:	40 e0       	ldi	r20, 0x00	; 0
+  c8:	2c c0       	rjmp	.+88     	; 0x122 <HC595Write+0x72>
+	{
+		//Output the data on DS line according to the
+		//Value of MSB
+		if(data & 0b10000000)
+  ca:	e7 ff       	sbrs	r30, 7
+  cc:	0c c0       	rjmp	.+24     	; 0xe6 <HC595Write+0x36>
+		{
+			//MSB is 1 so output high
+
+			HC595_PORT|=(1<<datapin);
+  ce:	25 b3       	in	r18, 0x15	; 21
+  d0:	81 e0       	ldi	r24, 0x01	; 1
+  d2:	90 e0       	ldi	r25, 0x00	; 0
+  d4:	06 2e       	mov	r0, r22
+  d6:	02 c0       	rjmp	.+4      	; 0xdc <HC595Write+0x2c>
+  d8:	88 0f       	add	r24, r24
+  da:	99 1f       	adc	r25, r25
+  dc:	0a 94       	dec	r0
+  de:	e2 f7       	brpl	.-8      	; 0xd8 <HC595Write+0x28>
+  e0:	82 2b       	or	r24, r18
+  e2:	85 bb       	out	0x15, r24	; 21
+  e4:	0c c0       	rjmp	.+24     	; 0xfe <HC595Write+0x4e>
+		}
+		else
+		{
+			//MSB is 0 so output high
+			HC595_PORT&=(~(1<<datapin));
+  e6:	25 b3       	in	r18, 0x15	; 21
+  e8:	81 e0       	ldi	r24, 0x01	; 1
+  ea:	90 e0       	ldi	r25, 0x00	; 0
+  ec:	06 2e       	mov	r0, r22
+  ee:	02 c0       	rjmp	.+4      	; 0xf4 <HC595Write+0x44>
+  f0:	88 0f       	add	r24, r24
+  f2:	99 1f       	adc	r25, r25
+  f4:	0a 94       	dec	r0
+  f6:	e2 f7       	brpl	.-8      	; 0xf0 <HC595Write+0x40>
+  f8:	80 95       	com	r24
+  fa:	82 23       	and	r24, r18
+  fc:	85 bb       	out	0x15, r24	; 21
+		}
+          //Pulse the Clock line
+		 HC595_PORT|=(1<<clock);//HIGH
+  fe:	95 b3       	in	r25, 0x15	; 21
+ 100:	21 e0       	ldi	r18, 0x01	; 1
+ 102:	30 e0       	ldi	r19, 0x00	; 0
+ 104:	05 2e       	mov	r0, r21
+ 106:	02 c0       	rjmp	.+4      	; 0x10c <HC595Write+0x5c>
+ 108:	22 0f       	add	r18, r18
+ 10a:	33 1f       	adc	r19, r19
+ 10c:	0a 94       	dec	r0
+ 10e:	e2 f7       	brpl	.-8      	; 0x108 <HC595Write+0x58>
+ 110:	92 2b       	or	r25, r18
+ 112:	95 bb       	out	0x15, r25	; 21
+
+		 HC595_PORT&=(~(1<<clock));//LOW 
+ 114:	95 b3       	in	r25, 0x15	; 21
+ 116:	20 95       	com	r18
+ 118:	29 23       	and	r18, r25
+ 11a:	25 bb       	out	0x15, r18	; 21
+		data=data<<1;  //Now bring next bit at MSB position
+ 11c:	ee 0f       	add	r30, r30
+ 11e:	ff 1f       	adc	r31, r31
+	else
+	{  datapin=3;
+		clock=4;
+		lch=5;
+	}
+	for(uint8_t i=0;i<8;i++)
+ 120:	4f 5f       	subi	r20, 0xFF	; 255
+ 122:	48 30       	cpi	r20, 0x08	; 8
+ 124:	90 f2       	brcs	.-92     	; 0xca <HC595Write+0x1a>
+
+	}
+
+	//Now all 8 bits have been transferred to shift register
+	//Move them to output latch at one
+	HC595_PORT|=(1<<lch);//HIGH
+ 126:	25 b3       	in	r18, 0x15	; 21
+ 128:	81 e0       	ldi	r24, 0x01	; 1
+ 12a:	90 e0       	ldi	r25, 0x00	; 0
+ 12c:	02 c0       	rjmp	.+4      	; 0x132 <HC595Write+0x82>
+ 12e:	88 0f       	add	r24, r24
+ 130:	99 1f       	adc	r25, r25
+ 132:	7a 95       	dec	r23
+ 134:	e2 f7       	brpl	.-8      	; 0x12e <HC595Write+0x7e>
+ 136:	92 2f       	mov	r25, r18
+ 138:	98 2b       	or	r25, r24
+ 13a:	95 bb       	out	0x15, r25	; 21
+	//_delay_loop_1(1);
+
+	HC595_PORT&=(~(1<<lch));//LOW
+ 13c:	95 b3       	in	r25, 0x15	; 21
+ 13e:	80 95       	com	r24
+ 140:	89 23       	and	r24, r25
+ 142:	85 bb       	out	0x15, r24	; 21
+ 144:	08 95       	ret
+
+Disassembly of section .text.main:
+
+00000146 <main>:
+      _delay_loop_2(0);
+   }
+}*/
+
+void main()
+{  
+ 146:	cf 93       	push	r28
+ 148:	df 93       	push	r29
+ 14a:	cd b7       	in	r28, 0x3d	; 61
+ 14c:	de b7       	in	r29, 0x3e	; 62
+ 14e:	c8 58       	subi	r28, 0x88	; 136
+ 150:	d1 09       	sbc	r29, r1
+ 152:	0f b6       	in	r0, 0x3f	; 63
+ 154:	f8 94       	cli
+ 156:	de bf       	out	0x3e, r29	; 62
+ 158:	0f be       	out	0x3f, r0	; 63
+ 15a:	cd bf       	out	0x3d, r28	; 61
+   uint8_t led_pattern[][8]={{
+ 15c:	80 e8       	ldi	r24, 0x80	; 128
+ 15e:	e0 e6       	ldi	r30, 0x60	; 96
+ 160:	f0 e0       	ldi	r31, 0x00	; 0
+ 162:	de 01       	movw	r26, r28
+ 164:	11 96       	adiw	r26, 0x01	; 1
+ 166:	01 90       	ld	r0, Z+
+ 168:	0d 92       	st	X+, r0
+ 16a:	8a 95       	dec	r24
+ 16c:	e1 f7       	brne	.-8      	; 0x166 <main+0x20>
+		   0b00000000,
+		   0b00000000,
+		   0b00000000,
+		   0b00000000
+	   }};
+   uint8_t dotcontrol[8]={0b00000001,0b00000010,0b00000100,0b00001000,0b00010000,0b00100000,0b01000000,0b10000000};
+ 16e:	88 e0       	ldi	r24, 0x08	; 8
+ 170:	e0 ee       	ldi	r30, 0xE0	; 224
+ 172:	f0 e0       	ldi	r31, 0x00	; 0
+ 174:	de 01       	movw	r26, r28
+ 176:	af 57       	subi	r26, 0x7F	; 127
+ 178:	bf 4f       	sbci	r27, 0xFF	; 255
+ 17a:	01 90       	ld	r0, Z+
+ 17c:	0d 92       	st	X+, r0
+ 17e:	8a 95       	dec	r24
+ 180:	e1 f7       	brne	.-8      	; 0x17a <main+0x34>
+
+   //Initialize HC595 system
+
+   HC595_DDR=0b00111111;   //0-row data 1-row clock 2-row latch 3- col data 4- col clock 5-col latch
+ 182:	8f e3       	ldi	r24, 0x3F	; 63
+ 184:	84 bb       	out	0x14, r24	; 20
+ int j=0;
+   while(1)
+   { 
+	    for (int k=0;k<17;k++)
+    {    j=0;
+ 186:	00 e0       	ldi	r16, 0x00	; 0
+ 188:	10 e0       	ldi	r17, 0x00	; 0
+         for(uint8_t i=0;i<512;i++)
+      {   
+         HC595Write(dotcontrol[j],1);
+ 18a:	e1 e8       	ldi	r30, 0x81	; 129
+ 18c:	f0 e0       	ldi	r31, 0x00	; 0
+ 18e:	ec 0f       	add	r30, r28
+ 190:	fd 1f       	adc	r31, r29
+ 192:	e0 0f       	add	r30, r16
+ 194:	f1 1f       	adc	r31, r17
+ 196:	80 81       	ld	r24, Z
+ 198:	61 e0       	ldi	r22, 0x01	; 1
+ 19a:	70 e0       	ldi	r23, 0x00	; 0
+ 19c:	90 e0       	ldi	r25, 0x00	; 0
+ 19e:	0e 94 58 00 	call	0xb0	; 0xb0 <__data_load_end>
+		 HC595Write((~led_pattern[k][j]),2);
+ 1a2:	e1 e0       	ldi	r30, 0x01	; 1
+ 1a4:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a6:	ec 0f       	add	r30, r28
+ 1a8:	fd 1f       	adc	r31, r29
+ 1aa:	e0 0f       	add	r30, r16
+ 1ac:	f1 1f       	adc	r31, r17
+ 1ae:	80 81       	ld	r24, Z
+ 1b0:	90 e0       	ldi	r25, 0x00	; 0
+ 1b2:	62 e0       	ldi	r22, 0x02	; 2
+ 1b4:	70 e0       	ldi	r23, 0x00	; 0
+ 1b6:	80 95       	com	r24
+ 1b8:	90 95       	com	r25
+ 1ba:	0e 94 58 00 	call	0xb0	; 0xb0 <__data_load_end>
+		 j++;
+ 1be:	0f 5f       	subi	r16, 0xFF	; 255
+ 1c0:	1f 4f       	sbci	r17, 0xFF	; 255
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1c2:	8f ec       	ldi	r24, 0xCF	; 207
+ 1c4:	97 e0       	ldi	r25, 0x07	; 7
+ 1c6:	01 97       	sbiw	r24, 0x01	; 1
+ 1c8:	f1 f7       	brne	.-4      	; 0x1c6 <main+0x80>
+ 1ca:	00 c0       	rjmp	.+0      	; 0x1cc <main+0x86>
+ 1cc:	00 00       	nop
+		   _delay_ms(5);                    //Write the data to HC595
+         //Wait();                 //Wait 
+         if (j>6)
+ 1ce:	07 30       	cpi	r16, 0x07	; 7
+ 1d0:	11 05       	cpc	r17, r1
+ 1d2:	dc f2       	brlt	.-74     	; 0x18a <main+0x44>
+         {j=0;
+ 1d4:	00 e0       	ldi	r16, 0x00	; 0
+ 1d6:	10 e0       	ldi	r17, 0x00	; 0
+         }
+       }
+ 1d8:	d8 cf       	rjmp	.-80     	; 0x18a <main+0x44>
+
+Disassembly of section .text.__dummy_fini:
+
+000001f8 <_fini>:
+ 1f8:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+000001fa <__funcs_on_exit>:
+ 1fa:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+000001fc <__simulator_exit>:
+ 1fc:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+000001da <exit>:
+ 1da:	ec 01       	movw	r28, r24
+ 1dc:	0e 94 fd 00 	call	0x1fa	; 0x1fa <__funcs_on_exit>
+ 1e0:	0e 94 fc 00 	call	0x1f8	; 0x1f8 <_fini>
+ 1e4:	ce 01       	movw	r24, r28
+ 1e6:	0e 94 fe 00 	call	0x1fc	; 0x1fc <__simulator_exit>
+ 1ea:	ce 01       	movw	r24, r28
+ 1ec:	0e 94 fa 00 	call	0x1f4	; 0x1f4 <_Exit>
+
+Disassembly of section .text._Exit:
+
+000001f4 <_Exit>:
+ 1f4:	0e 94 56 00 	call	0xac	; 0xac <_exit>

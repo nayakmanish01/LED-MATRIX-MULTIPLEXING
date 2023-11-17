@@ -1,0 +1,567 @@
+
+shiftregister_atmega.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000b0  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00000344  000003d8  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  000003d8  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  00000407  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000058  00000000  00000000  00000415  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000b17  00000000  00000000  0000046d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000067f  00000000  00000000  00000f84  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000003db  00000000  00000000  00001603  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000c0  00000000  00000000  000019e0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000196  00000000  00000000  00001aa0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000262  00000000  00000000  00001c36  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000060  00000000  00000000  00001e98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  00000246  00000246  000002da  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001ef8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.HC595Init 00000008  0000023e  0000023e  000002d2  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.HC595PulseC 0000000e  00000222  00000222  000002b6  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.HC595LatchC 0000001a  000001d8  000001d8  0000026c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.HC595PulseR 0000000e  00000230  00000230  000002c4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.HC595LatchR 0000001a  000001f2  000001f2  00000286  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.HC595WriteC 00000032  00000174  00000174  00000208  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.HC595WriteR 00000032  000001a6  000001a6  0000023a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .rodata       000000f0  00800060  00000254  000002e8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 22 .text.main    000000c4  000000b0  000000b0  00000144  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 23 .text.__dummy_fini 00000002  0000024e  0000024e  000002e2  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .text.__dummy_funcs_on_exit 00000002  00000250  00000250  000002e4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 25 .text.__dummy_simulator_exit 00000002  00000252  00000252  000002e6  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .text.exit    00000016  0000020c  0000020c  000002a0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 27 .text._Exit   00000004  0000024a  0000024a  000002de  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2e 00 	jmp	0x5c	; 0x5c <__ctors_end>
+   4:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+   8:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+   c:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  10:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  14:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  18:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  1c:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  20:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  24:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  28:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  2c:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  30:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  34:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  38:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  3c:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  40:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  44:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  48:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  4c:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+  50:	0c 94 23 01 	jmp	0x246	; 0x246 <__bad_interrupt>
+
+00000054 <.dinit>:
+  54:	00 60       	ori	r16, 0x00	; 0
+  56:	01 50       	subi	r16, 0x01	; 1
+  58:	00 02       	muls	r16, r16
+  5a:	54 00       	.word	0x0054	; ????
+
+0000005c <__ctors_end>:
+  5c:	11 24       	eor	r1, r1
+  5e:	1f be       	out	0x3f, r1	; 63
+  60:	cf e5       	ldi	r28, 0x5F	; 95
+  62:	d8 e0       	ldi	r29, 0x08	; 8
+  64:	de bf       	out	0x3e, r29	; 62
+  66:	cd bf       	out	0x3d, r28	; 61
+
+00000068 <__do_copy_data>:
+  68:	e4 e5       	ldi	r30, 0x54	; 84
+  6a:	f0 e0       	ldi	r31, 0x00	; 0
+  6c:	40 e0       	ldi	r20, 0x00	; 0
+  6e:	17 c0       	rjmp	.+46     	; 0x9e <__do_clear_bss+0x8>
+  70:	b5 91       	lpm	r27, Z+
+  72:	a5 91       	lpm	r26, Z+
+  74:	35 91       	lpm	r19, Z+
+  76:	25 91       	lpm	r18, Z+
+  78:	05 91       	lpm	r16, Z+
+  7a:	07 fd       	sbrc	r16, 7
+  7c:	0c c0       	rjmp	.+24     	; 0x96 <__do_clear_bss>
+  7e:	95 91       	lpm	r25, Z+
+  80:	85 91       	lpm	r24, Z+
+  82:	ef 01       	movw	r28, r30
+  84:	f9 2f       	mov	r31, r25
+  86:	e8 2f       	mov	r30, r24
+  88:	05 90       	lpm	r0, Z+
+  8a:	0d 92       	st	X+, r0
+  8c:	a2 17       	cp	r26, r18
+  8e:	b3 07       	cpc	r27, r19
+  90:	d9 f7       	brne	.-10     	; 0x88 <__do_copy_data+0x20>
+  92:	fe 01       	movw	r30, r28
+  94:	04 c0       	rjmp	.+8      	; 0x9e <__do_clear_bss+0x8>
+
+00000096 <__do_clear_bss>:
+  96:	1d 92       	st	X+, r1
+  98:	a2 17       	cp	r26, r18
+  9a:	b3 07       	cpc	r27, r19
+  9c:	e1 f7       	brne	.-8      	; 0x96 <__do_clear_bss>
+  9e:	eb 35       	cpi	r30, 0x5B	; 91
+  a0:	f4 07       	cpc	r31, r20
+  a2:	31 f7       	brne	.-52     	; 0x70 <__do_copy_data+0x8>
+  a4:	0e 94 58 00 	call	0xb0	; 0xb0 <_etext>
+  a8:	0c 94 06 01 	jmp	0x20c	; 0x20c <exit>
+
+000000ac <_exit>:
+  ac:	f8 94       	cli
+
+000000ae <__stop_program>:
+  ae:	ff cf       	rjmp	.-2      	; 0xae <__stop_program>
+
+Disassembly of section .text:
+
+00000246 <__bad_interrupt>:
+ 246:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+Disassembly of section .text.HC595Init:
+
+0000023e <HC595Init>:
+//Initialize HC595 System  
+
+void HC595Init()  
+{
+   //Make the Data(DS), Shift clock (SH_CP), Store Clock (ST_CP) lines output for both the registers
+   HC595_DDR|=((1<<HC595_SHC_CP_POS)|(1<<HC595_STC_CP_POS)|(1<<HC595_DSC_POS)|(1<<HC595_SHR_CP_POS)|(1<<HC595_STR_CP_POS)|(1<<HC595_DSR_POS));
+ 23e:	84 b3       	in	r24, 0x14	; 20
+ 240:	8f 63       	ori	r24, 0x3F	; 63
+ 242:	84 bb       	out	0x14, r24	; 20
+ 244:	08 95       	ret
+
+Disassembly of section .text.HC595PulseC:
+
+00000222 <HC595PulseC>:
+//Sends a clock pulse on SH_CP line for column
+void HC595PulseC()
+{
+   //Pulse the Shift Clock
+
+   HC595_PORT|=(1<<HC595_SHC_CP_POS);//HIGH
+ 222:	85 b3       	in	r24, 0x15	; 21
+ 224:	82 60       	ori	r24, 0x02	; 2
+ 226:	85 bb       	out	0x15, r24	; 21
+
+   HC595_PORT&=(~(1<<HC595_SHC_CP_POS));//LOW
+ 228:	85 b3       	in	r24, 0x15	; 21
+ 22a:	8d 7f       	andi	r24, 0xFD	; 253
+ 22c:	85 bb       	out	0x15, r24	; 21
+ 22e:	08 95       	ret
+
+Disassembly of section .text.HC595LatchC:
+
+000001d8 <HC595LatchC>:
+//Sends a clock pulse on ST_CP line for column
+void HC595LatchC()
+{
+   //Pulse the Store Clock
+
+   HC595_PORT|=(1<<HC595_STC_CP_POS);//HIGH
+ 1d8:	85 b3       	in	r24, 0x15	; 21
+ 1da:	84 60       	ori	r24, 0x04	; 4
+ 1dc:	85 bb       	out	0x15, r24	; 21
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 1de:	81 e0       	ldi	r24, 0x01	; 1
+ 1e0:	98 2f       	mov	r25, r24
+ 1e2:	9a 95       	dec	r25
+ 1e4:	f1 f7       	brne	.-4      	; 0x1e2 <HC595LatchC+0xa>
+   _delay_loop_1(1);
+
+   HC595_PORT&=(~(1<<HC595_STC_CP_POS));//LOW
+ 1e6:	95 b3       	in	r25, 0x15	; 21
+ 1e8:	9b 7f       	andi	r25, 0xFB	; 251
+ 1ea:	95 bb       	out	0x15, r25	; 21
+ 1ec:	8a 95       	dec	r24
+ 1ee:	f1 f7       	brne	.-4      	; 0x1ec <HC595LatchC+0x14>
+ 1f0:	08 95       	ret
+
+Disassembly of section .text.HC595PulseR:
+
+00000230 <HC595PulseR>:
+////Sends a clock pulse on SH_CP line for row
+void HC595PulseR()
+{
+	//Pulse the Shift Clock
+
+	HC595_PORT|=(1<<HC595_SHR_CP_POS);//HIGH
+ 230:	85 b3       	in	r24, 0x15	; 21
+ 232:	80 61       	ori	r24, 0x10	; 16
+ 234:	85 bb       	out	0x15, r24	; 21
+
+	HC595_PORT&=(~(1<<HC595_SHR_CP_POS));//LOW
+ 236:	85 b3       	in	r24, 0x15	; 21
+ 238:	8f 7e       	andi	r24, 0xEF	; 239
+ 23a:	85 bb       	out	0x15, r24	; 21
+ 23c:	08 95       	ret
+
+Disassembly of section .text.HC595LatchR:
+
+000001f2 <HC595LatchR>:
+//Sends a clock pulse on ST_CP line for row
+void HC595LatchR()
+{
+	//Pulse the Store Clock
+
+	HC595_PORT|=(1<<HC595_STR_CP_POS);//HIGH
+ 1f2:	85 b3       	in	r24, 0x15	; 21
+ 1f4:	80 62       	ori	r24, 0x20	; 32
+ 1f6:	85 bb       	out	0x15, r24	; 21
+ 1f8:	81 e0       	ldi	r24, 0x01	; 1
+ 1fa:	98 2f       	mov	r25, r24
+ 1fc:	9a 95       	dec	r25
+ 1fe:	f1 f7       	brne	.-4      	; 0x1fc <HC595LatchR+0xa>
+	_delay_loop_1(1);
+
+	HC595_PORT&=(~(1<<HC595_STR_CP_POS));//LOW
+ 200:	95 b3       	in	r25, 0x15	; 21
+ 202:	9f 7d       	andi	r25, 0xDF	; 223
+ 204:	95 bb       	out	0x15, r25	; 21
+ 206:	8a 95       	dec	r24
+ 208:	f1 f7       	brne	.-4      	; 0x206 <HC595LatchR+0x14>
+ 20a:	08 95       	ret
+
+Disassembly of section .text.HC595WriteC:
+
+00000174 <HC595WriteC>:
+
+*/
+
+//For Column
+void HC595WriteC(uint8_t dataC)
+{
+ 174:	cf 93       	push	r28
+ 176:	df 93       	push	r29
+ 178:	d8 2f       	mov	r29, r24
+	//Send each 8 bits serially
+
+	//Order is MSB first
+	for(uint8_t i=0;i<8;i++)
+ 17a:	c0 e0       	ldi	r28, 0x00	; 0
+ 17c:	0d c0       	rjmp	.+26     	; 0x198 <HC595WriteC+0x24>
+	{
+		//Output the data on DS line according to the
+		//Value of MSB
+		if(dataC & 0b10000000)
+ 17e:	dd 23       	and	r29, r29
+ 180:	24 f4       	brge	.+8      	; 0x18a <HC595WriteC+0x16>
+		{
+			//MSB is 1 so output high
+
+			HC595DataHighC();
+ 182:	85 b3       	in	r24, 0x15	; 21
+ 184:	81 60       	ori	r24, 0x01	; 1
+ 186:	85 bb       	out	0x15, r24	; 21
+ 188:	03 c0       	rjmp	.+6      	; 0x190 <HC595WriteC+0x1c>
+		}
+		else
+		{
+			//MSB is 0 so output high
+			HC595DataLowC();
+ 18a:	85 b3       	in	r24, 0x15	; 21
+ 18c:	8e 7f       	andi	r24, 0xFE	; 254
+ 18e:	85 bb       	out	0x15, r24	; 21
+		}
+
+		HC595PulseC();  //Pulse the Clock line
+ 190:	0e 94 11 01 	call	0x222	; 0x222 <HC595PulseC>
+		dataC=dataC<<1;  //Now bring next bit at MSB position
+ 194:	dd 0f       	add	r29, r29
+void HC595WriteC(uint8_t dataC)
+{
+	//Send each 8 bits serially
+
+	//Order is MSB first
+	for(uint8_t i=0;i<8;i++)
+ 196:	cf 5f       	subi	r28, 0xFF	; 255
+ 198:	c8 30       	cpi	r28, 0x08	; 8
+ 19a:	88 f3       	brcs	.-30     	; 0x17e <HC595WriteC+0xa>
+
+	}
+
+	//Now all 8 bits have been transferred to shift register
+	//Move them to output latch at one
+	HC595LatchC();
+ 19c:	0e 94 ec 00 	call	0x1d8	; 0x1d8 <HC595LatchC>
+}
+ 1a0:	df 91       	pop	r29
+ 1a2:	cf 91       	pop	r28
+ 1a4:	08 95       	ret
+
+Disassembly of section .text.HC595WriteR:
+
+000001a6 <HC595WriteR>:
+
+//For row
+void HC595WriteR(uint8_t dataR)
+{
+ 1a6:	cf 93       	push	r28
+ 1a8:	df 93       	push	r29
+ 1aa:	d8 2f       	mov	r29, r24
+	//Send each 8 bits serially
+
+	//Order is MSB first
+	for(uint8_t i=0;i<8;i++)
+ 1ac:	c0 e0       	ldi	r28, 0x00	; 0
+ 1ae:	0d c0       	rjmp	.+26     	; 0x1ca <HC595WriteR+0x24>
+	{
+		//Output the data on DS line according to the
+		//Value of MSB
+		if(dataR & 0b10000000)
+ 1b0:	dd 23       	and	r29, r29
+ 1b2:	24 f4       	brge	.+8      	; 0x1bc <HC595WriteR+0x16>
+		{
+			//MSB is 1 so output high
+
+			HC595DataHighR();
+ 1b4:	85 b3       	in	r24, 0x15	; 21
+ 1b6:	88 60       	ori	r24, 0x08	; 8
+ 1b8:	85 bb       	out	0x15, r24	; 21
+ 1ba:	03 c0       	rjmp	.+6      	; 0x1c2 <HC595WriteR+0x1c>
+		}
+		else
+		{
+			//MSB is 0 so output high
+			HC595DataLowR();
+ 1bc:	85 b3       	in	r24, 0x15	; 21
+ 1be:	87 7f       	andi	r24, 0xF7	; 247
+ 1c0:	85 bb       	out	0x15, r24	; 21
+		}
+
+		HC595PulseR();  //Pulse the Clock line
+ 1c2:	0e 94 18 01 	call	0x230	; 0x230 <HC595PulseR>
+		dataR=dataR<<1;  //Now bring next bit at MSB position
+ 1c6:	dd 0f       	add	r29, r29
+void HC595WriteR(uint8_t dataR)
+{
+	//Send each 8 bits serially
+
+	//Order is MSB first
+	for(uint8_t i=0;i<8;i++)
+ 1c8:	cf 5f       	subi	r28, 0xFF	; 255
+ 1ca:	c8 30       	cpi	r28, 0x08	; 8
+ 1cc:	88 f3       	brcs	.-30     	; 0x1b0 <HC595WriteR+0xa>
+
+	}
+
+	//Now all 8 bits have been transferred to shift register
+	//Move them to output latch at one
+	HC595LatchR();
+ 1ce:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <HC595LatchR>
+}
+ 1d2:	df 91       	pop	r29
+ 1d4:	cf 91       	pop	r28
+ 1d6:	08 95       	ret
+
+Disassembly of section .text.main:
+
+000000b0 <main>:
+
+// Main function from where program execution starts
+void main()
+{  
+  b0:	cf 93       	push	r28
+  b2:	df 93       	push	r29
+  b4:	cd b7       	in	r28, 0x3d	; 61
+  b6:	de b7       	in	r29, 0x3e	; 62
+  b8:	c0 5f       	subi	r28, 0xF0	; 240
+  ba:	d1 09       	sbc	r29, r1
+  bc:	0f b6       	in	r0, 0x3f	; 63
+  be:	f8 94       	cli
+  c0:	de bf       	out	0x3e, r29	; 62
+  c2:	0f be       	out	0x3f, r0	; 63
+  c4:	cd bf       	out	0x3d, r28	; 61
+	
+	//Defining array for carrying Patterns 
+   uint8_t led_pattern[][8]={{
+  c6:	88 ee       	ldi	r24, 0xE8	; 232
+  c8:	e0 e6       	ldi	r30, 0x60	; 96
+  ca:	f0 e0       	ldi	r31, 0x00	; 0
+  cc:	de 01       	movw	r26, r28
+  ce:	11 96       	adiw	r26, 0x01	; 1
+  d0:	01 90       	ld	r0, Z+
+  d2:	0d 92       	st	X+, r0
+  d4:	8a 95       	dec	r24
+  d6:	e1 f7       	brne	.-8      	; 0xd0 <main+0x20>
+	   0b10000000,
+	   0b10000000
+   }
+};
+   
+   uint8_t dotcontrol[8]={0b00000001,0b00000010,0b00000100,0b00001000,0b00010000,0b00100000,0b01000000,0b10000000};
+  d8:	88 e0       	ldi	r24, 0x08	; 8
+  da:	e8 e4       	ldi	r30, 0x48	; 72
+  dc:	f1 e0       	ldi	r31, 0x01	; 1
+  de:	de 01       	movw	r26, r28
+  e0:	a7 51       	subi	r26, 0x17	; 23
+  e2:	bf 4f       	sbci	r27, 0xFF	; 255
+  e4:	01 90       	ld	r0, Z+
+  e6:	0d 92       	st	X+, r0
+  e8:	8a 95       	dec	r24
+  ea:	e1 f7       	brne	.-8      	; 0xe4 <main+0x34>
+
+   //Initialize HC595 system
+
+   HC595Init();   
+  ec:	0e 94 1f 01 	call	0x23e	; 0x23e <HC595Init>
+   
+   int j=0;
+  f0:	00 e0       	ldi	r16, 0x00	; 0
+  f2:	10 e0       	ldi	r17, 0x00	; 0
+   while(1)
+   { 
+	   for (int k=0;k<29;k++)//loop changing frame
+  f4:	e1 2c       	mov	r14, r1
+  f6:	f1 2c       	mov	r15, r1
+  f8:	38 c0       	rjmp	.+112    	; 0x16a <main+0xba>
+     {   
+         for(uint8_t i=0;i<105;i++)// loop for stabilizing same frame for extended period of time
+       {   
+         HC595WriteC(dotcontrol[j]);
+  fa:	e9 ee       	ldi	r30, 0xE9	; 233
+  fc:	f0 e0       	ldi	r31, 0x00	; 0
+  fe:	ec 0f       	add	r30, r28
+ 100:	fd 1f       	adc	r31, r29
+ 102:	e0 0f       	add	r30, r16
+ 104:	f1 1f       	adc	r31, r17
+ 106:	80 81       	ld	r24, Z
+ 108:	0e 94 ba 00 	call	0x174	; 0x174 <HC595WriteC>
+		 HC595WriteR(~(led_pattern[k][j]));
+ 10c:	f7 01       	movw	r30, r14
+ 10e:	ee 0f       	add	r30, r30
+ 110:	ff 1f       	adc	r31, r31
+ 112:	ee 0f       	add	r30, r30
+ 114:	ff 1f       	adc	r31, r31
+ 116:	ee 0f       	add	r30, r30
+ 118:	ff 1f       	adc	r31, r31
+ 11a:	81 e0       	ldi	r24, 0x01	; 1
+ 11c:	90 e0       	ldi	r25, 0x00	; 0
+ 11e:	8c 0f       	add	r24, r28
+ 120:	9d 1f       	adc	r25, r29
+ 122:	e8 0f       	add	r30, r24
+ 124:	f9 1f       	adc	r31, r25
+ 126:	e0 0f       	add	r30, r16
+ 128:	f1 1f       	adc	r31, r17
+ 12a:	80 81       	ld	r24, Z
+ 12c:	80 95       	com	r24
+ 12e:	0e 94 d3 00 	call	0x1a6	; 0x1a6 <HC595WriteR>
+		 j=j+1;                    //Write the data to HC595
+ 132:	0f 5f       	subi	r16, 0xFF	; 255
+ 134:	1f 4f       	sbci	r17, 0xFF	; 255
+         if (j>7)
+ 136:	08 30       	cpi	r16, 0x08	; 8
+ 138:	11 05       	cpc	r17, r1
+ 13a:	14 f0       	brlt	.+4      	; 0x140 <main+0x90>
+         {j=0;}
+ 13c:	00 e0       	ldi	r16, 0x00	; 0
+ 13e:	10 e0       	ldi	r17, 0x00	; 0
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 140:	8f e6       	ldi	r24, 0x6F	; 111
+ 142:	97 e1       	ldi	r25, 0x17	; 23
+ 144:	01 97       	sbiw	r24, 0x01	; 1
+ 146:	f1 f7       	brne	.-4      	; 0x144 <main+0x94>
+ 148:	00 c0       	rjmp	.+0      	; 0x14a <main+0x9a>
+ 14a:	00 00       	nop
+   int j=0;
+   while(1)
+   { 
+	   for (int k=0;k<29;k++)//loop changing frame
+     {   
+         for(uint8_t i=0;i<105;i++)// loop for stabilizing same frame for extended period of time
+ 14c:	d3 94       	inc	r13
+ 14e:	01 c0       	rjmp	.+2      	; 0x152 <main+0xa2>
+ 150:	d1 2c       	mov	r13, r1
+ 152:	98 e6       	ldi	r25, 0x68	; 104
+ 154:	9d 15       	cp	r25, r13
+ 156:	88 f6       	brcc	.-94     	; 0xfa <main+0x4a>
+ 158:	8f e6       	ldi	r24, 0x6F	; 111
+ 15a:	97 e1       	ldi	r25, 0x17	; 23
+ 15c:	01 97       	sbiw	r24, 0x01	; 1
+ 15e:	f1 f7       	brne	.-4      	; 0x15c <main+0xac>
+ 160:	00 c0       	rjmp	.+0      	; 0x162 <main+0xb2>
+ 162:	00 00       	nop
+   HC595Init();   
+   
+   int j=0;
+   while(1)
+   { 
+	   for (int k=0;k<29;k++)//loop changing frame
+ 164:	9f ef       	ldi	r25, 0xFF	; 255
+ 166:	e9 1a       	sub	r14, r25
+ 168:	f9 0a       	sbc	r15, r25
+ 16a:	8d e1       	ldi	r24, 0x1D	; 29
+ 16c:	e8 16       	cp	r14, r24
+ 16e:	f1 04       	cpc	r15, r1
+ 170:	7c f3       	brlt	.-34     	; 0x150 <main+0xa0>
+ 172:	c0 cf       	rjmp	.-128    	; 0xf4 <main+0x44>
+
+Disassembly of section .text.__dummy_fini:
+
+0000024e <_fini>:
+ 24e:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+00000250 <__funcs_on_exit>:
+ 250:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+00000252 <__simulator_exit>:
+ 252:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+0000020c <exit>:
+ 20c:	ec 01       	movw	r28, r24
+ 20e:	0e 94 28 01 	call	0x250	; 0x250 <__funcs_on_exit>
+ 212:	0e 94 27 01 	call	0x24e	; 0x24e <_fini>
+ 216:	ce 01       	movw	r24, r28
+ 218:	0e 94 29 01 	call	0x252	; 0x252 <__simulator_exit>
+ 21c:	ce 01       	movw	r24, r28
+ 21e:	0e 94 25 01 	call	0x24a	; 0x24a <_Exit>
+
+Disassembly of section .text._Exit:
+
+0000024a <_Exit>:
+ 24a:	0e 94 56 00 	call	0xac	; 0xac <_exit>
